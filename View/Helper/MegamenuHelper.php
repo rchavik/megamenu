@@ -1,8 +1,13 @@
 <?php
 
-App::uses('LayoutHelper', 'View/Helper');
-
 class MegamenuHelper extends LayoutHelper {
+
+	public function __construct(View $view) {
+		parent::__construct($view);
+		if (!isset($this->params['admin']) && !$this->request->is('ajax')) {
+			$this->Html->css('/megamenu/css/menu', array(), array('inline' => false));
+		}
+	}
 
 /**
  * Show Menu by Alias
@@ -12,25 +17,11 @@ class MegamenuHelper extends LayoutHelper {
  * @return string
  */
 	public function menu($menuAlias, $options = array()) {
-		$_options = array(
-			'tag' => 'ul',
-			'tagAttributes' => array(),
-			'selected' => 'selected',
-			'dropdown' => false,
-			'dropdownClass' => 'sf-menu',
-			'element' => 'menu',
-		);
-		$options = array_merge($_options, $options);
-
-		if (!isset($this->_View->viewVars['menus_for_layout'][$menuAlias])) {
-			return false;
-		}
-		$menu = $this->_View->viewVars['menus_for_layout'][$menuAlias];
-		$output = $this->_View->element($options['element'], array(
-			'menu' => $menu,
-			'options' => $options,
-		));
-		return $output;
+		$options = Set::merge($options, array(
+			'element' => 'Megamenu.menu',
+			'dropdownClass' => 'megamenu',
+			));
+		return parent::menu($menuAlias, $options);
 	}
 
 /**
