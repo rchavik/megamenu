@@ -3,9 +3,7 @@ Megamenu Plugin Version 0.1
 
 Megamenu plugin for Croogo
 
-Based on:
-
-	http://net.tutsplus.com/tutorials/html-css-techniques/how-to-build-a-kick-butt-css3-mega-drop-down-menu/
+Based on: http://net.tutsplus.com/tutorials/html-css-techniques/how-to-build-a-kick-butt-css3-mega-drop-down-menu/
 
 This is alpha software.
 
@@ -16,29 +14,29 @@ Configuring the menu is a pain. You need to have the correct value in each link'
 
 **Link** parameter:
 
-	`container`: first level menu items. Mandatory for first level menu items.
+- `container`: first level menu items. Mandatory for first level menu items.
+
 	Valid values: [dropdown_1column|dropdown_2columns|dropdown_3columns|dropdown_4_columns|dropdown_5columns]
 
-	`heading`:
-	Valid values: [h2|h3]
+- `heading`: Valid values: [h2|h3]
 
-	`imgpath`: relative img path
+- `imgpath`: relative img path
 
-	`imgclass`: image class
-	Valid values: imgshadow, img_left, img_right
+- `imgclass`: Valid values: imgshadow, img_left, img_right
 
-	`blackbox`: display description in blackbox
+- `blackbox`: display description in blackbox
+
 	Valid values: `true`
 
-	`link`: Set to `none` to hide menu item link
-	Valid values: `none`
+- `link`: Set to `none` to hide menu item link
 
-	`description`: Description location
-	Valid values: [before|after] link
+- `description`: Description location in respect to item link
 
-	`div`: container class
+	Valid values: [before|after]
 
-	`list`: list class
+- `div`: container class
+
+- `list`: list class
 
 Known Bugs
 -----------
@@ -51,4 +49,5 @@ Requirements
 Croogo 1.4 - http://croogo.org/
 
 Good luck and have fun.
+
 -- rchavik
