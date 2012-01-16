@@ -10,7 +10,7 @@ body, ul, li {
 ul.megamenu {
 	list-style:none;
 	width:940px;
-	margin:30px auto 0px auto;
+	margin:30px auto;
 	height:43px;
 	padding:0px 20px 0px 20px;
 
@@ -79,10 +79,10 @@ ul.megamenu li:hover a {
 }
 ul.megamenu li .drop {
 	padding-right:21px;
-	background:url("img/drop.png") no-repeat right 8px;
+	background:url("../img/drop.png") no-repeat right 8px;
 }
 ul.megamenu li:hover .drop {
-	background:url("img/drop.png") no-repeat right 7px;
+	background:url("../img/drop.png") no-repeat right 7px;
 }
 
 .dropdown_1column, 
