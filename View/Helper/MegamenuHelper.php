@@ -83,7 +83,15 @@ class MegamenuHelper extends LayoutHelper {
 				}
 			}
 			if (isset($link['children']) && count($link['children']) > 0) {
+				if (isset($link['Params']['list'])) {
+					$savedClass = $options['tagAttributes'];
+					$options['tagAttributes']['class'] = $link['Params']['list'];
+				}
 				$linkOutput .= $this->nestedLinks($link['children'], $options, $depth + 1, $link);
+				if (isset($savedClass)) {
+					$options['tagAttributes'] = $savedClass;
+					unset($savedClass);
+				}
 			}
 			if (isset($parent['Params']['container'])) {
 				if (isset($link['Params']['div'])) {

@@ -38,6 +38,8 @@ Configuring the menu is a pain. You need to have the correct value in each link'
 
 	`div`: container class
 
+	`list`: list class
+
 Known Bugs
 -----------
 
