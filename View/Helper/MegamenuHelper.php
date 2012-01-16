@@ -32,12 +32,13 @@ class MegamenuHelper extends LayoutHelper {
  * @param integer $depth depth level
  * @return string
  */
-	public function nestedLinks($links, $options = array(), $depth = 1) {
+	public function nestedLinks($links, $options = array(), $depth = 1, $parent = null) {
 		$_options = array();
 		$options = array_merge($_options, $options);
 
 		$output = '';
 		foreach ($links AS $link) {
+
 			$linkAttr = array(
 				'id' => 'link-' . $link['Link']['id'],
 				'rel' => $link['Link']['rel'],
@@ -71,17 +72,67 @@ class MegamenuHelper extends LayoutHelper {
 				$linkAttr['class'] .= ' ' . $options['selected'];
 			}
 
-			$linkOutput = $this->Html->link($link['Link']['title'], $link['Link']['link'], $linkAttr);
-			if (isset($link['children']) && count($link['children']) > 0) {
-				$linkOutput .= $this->nestedLinks($link['children'], $options, $depth + 1);
+			if ($depth == 1) {
+				$linkAttr['class'] .= ' drop';
 			}
-			$linkOutput = $this->Html->tag('li', $linkOutput);
+
+			$linkOutput = $this->Html->link($link['Link']['title'], $link['Link']['link'], $linkAttr);
+			if (isset($link['Params']['heading'])) {
+				if (in_array(strtolower(trim($link['Params']['heading'])), array('h2', 'h3'))) {
+					$linkOutput = $this->Html->tag($link['Params']['heading'], $linkOutput);
+				}
+			}
+			if (isset($link['children']) && count($link['children']) > 0) {
+				$linkOutput .= $this->nestedLinks($link['children'], $options, $depth + 1, $link);
+			}
+			if (isset($parent['Params']['container'])) {
+				if (isset($link['Params']['div'])) {
+					$divOptions = array('class' => $link['Params']['div']);
+				} else {
+					$divOptions = array('class' => 'col_1');
+				}
+				if (isset($link['Params']['description']) || !empty($link['Link']['description'])) {
+					if (!empty($link['Params']['description'])) {
+						$position = $link['Params']['description'];
+					} else {
+						$position = 'before';
+					}
+					if ($position == 'before') {
+						$linkOutput = $this->Html->tag('p', $link['Link']['description'] . $linkOutput);
+					}
+					if ($position == 'after') {
+						$linkOutput = $this->Html->tag('p', $linkOutput . $link['Link']['description']);
+					}
+				}
+				if (isset($link['Params']['blackbox'])) {
+					$linkOutput = $this->Html->tag('p', $link['Link']['description'], array('class' => 'black_box'));
+				}
+				if (isset($link['Params']['imgpath'])) {
+					$imgclass = '';
+					if (isset($link['Params']['imgclass'])) {
+						$imgclass = $link['Params']['imgclass'];
+					}
+					$linkOutput = $this->Html->tag('p',
+						$this->Html->image($link['Params']['imgpath'], array(
+							'class' => $imgclass
+							)) .
+						$linkOutput
+						);
+				}
+				$linkOutput = $this->Html->tag('div', $linkOutput, $divOptions);
+			} else {
+				$linkOutput = $this->Html->tag('li', $linkOutput);
+			}
 			$output .= $linkOutput;
 		}
 		if ($output != null) {
 			$tagAttr = $options['tagAttributes'];
 			if ($options['dropdown'] && $depth == 1) {
 				$tagAttr['class'] = $options['dropdownClass'];
+			}
+			if (isset($parent['Params']['container'])) {
+				$options['tag'] = 'div';
+				$tagAttr['class'] = $parent['Params']['container'];
 			}
 			$output = $this->Html->tag($options['tag'], $output, $tagAttr);
 		}

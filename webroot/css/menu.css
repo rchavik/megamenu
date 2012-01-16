@@ -1,11 +1,13 @@
+/*
 body, ul, li {
 	font-size:14px; 
 	font-family:Arial, Helvetica, sans-serif;
 	line-height:21px;
 	text-align:left;
 }
+*/
 
-#menu {
+ul.megamenu {
 	list-style:none;
 	width:940px;
 	margin:30px auto 0px auto;
@@ -33,7 +35,7 @@ body, ul, li {
 	box-shadow:inset 0px 0px 1px #edf9ff;
 }
 
-#menu li {
+ul.megamenu li {
 	float:left;
 	display:block;
 	text-align:center;
@@ -44,7 +46,7 @@ body, ul, li {
 	border:none;
 }
 
-#menu li:hover {
+ul.megamenu li:hover {
 	border: 1px solid #777777;
 	padding: 4px 9px 4px 9px;
 	
@@ -61,7 +63,7 @@ body, ul, li {
 	border-radius: 5px 5px 0px 0px;
 }
 
-#menu li a {
+ul.megamenu li a {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:14px; 
 	color: #EEEEEE;
@@ -71,15 +73,15 @@ body, ul, li {
 	text-shadow: 1px 1px 1px #000;
 }
 
-#menu li:hover a {
+ul.megamenu li:hover a {
 	color:#161616;
 	text-shadow: 1px 1px 1px #ffffff;
 }
-#menu li .drop {
+ul.megamenu li .drop {
 	padding-right:21px;
 	background:url("img/drop.png") no-repeat right 8px;
 }
-#menu li:hover .drop {
+ul.megamenu li:hover .drop {
 	background:url("img/drop.png") no-repeat right 7px;
 }
 
@@ -114,11 +116,11 @@ body, ul, li {
 .dropdown_4columns {width: 560px;}
 .dropdown_5columns {width: 700px;}
 
-#menu li:hover .dropdown_1column, 
-#menu li:hover .dropdown_2columns, 
-#menu li:hover .dropdown_3columns,
-#menu li:hover .dropdown_4columns,
-#menu li:hover .dropdown_5columns {
+ul.megamenu li:hover .dropdown_1column,
+ul.megamenu li:hover .dropdown_2columns,
+ul.megamenu li:hover .dropdown_3columns,
+ul.megamenu li:hover .dropdown_4columns,
+ul.megamenu li:hover .dropdown_5columns {
 	left:-1px;
 	top:auto;
 }
@@ -140,31 +142,31 @@ body, ul, li {
 .col_4 {width:550px;}
 .col_5 {width:690px;}
 
-#menu .menu_right {
+ul.megamenu .menu_right {
 	float:right;
 	margin-right:0px;
 }
-#menu li .align_right {
+ul.megamenu li .align_right {
 	/* Rounded Corners */
 	-moz-border-radius: 5px 0px 5px 5px;
     -webkit-border-radius: 5px 0px 5px 5px;
     border-radius: 5px 0px 5px 5px;
 }
 
-#menu li:hover .align_right {
+ul.megamenu li:hover .align_right {
 	left:auto;
 	right:-1px;
 	top:auto;
 }
 
-#menu p, #menu h2, #menu h3, #menu ul li {
+ul.megamenu p, ul.megamenu h2, ul.megamenu h3, ul.megamenu ul li {
 	font-family:Arial, Helvetica, sans-serif;
 	line-height:21px;
 	font-size:12px;
 	text-align:left;
 	text-shadow: 1px 1px 1px #FFFFFF;
 }
-#menu h2 {
+ul.megamenu h2 {
 	font-size:21px;
 	font-weight:400;
 	letter-spacing:-1px;
@@ -172,34 +174,34 @@ body, ul, li {
 	padding-bottom:14px;
 	border-bottom:1px solid #666666;
 }
-#menu h3 {
+ul.megamenu h3 {
 	font-size:14px;
 	margin:7px 0 14px 0;
 	padding-bottom:7px;
 	border-bottom:1px solid #888888;
 }
-#menu p {
+ul.megamenu p {
 	line-height:18px;
 	margin:0 0 10px 0;
 }
 
-#menu li:hover div a {
+ul.megamenu li:hover div a {
 	font-size:12px;
 	color:#015b86;
 }
-#menu li:hover div a:hover {
+ul.megamenu li:hover div a:hover {
 	color:#029feb;
 }
 
 
-.strong {
+.megamenu .strong {
 	font-weight:bold;
 }
-.italic {
+.megamenu .italic {
 	font-style:italic;
 }
 
-.imgshadow { /* Better style on light background */
+.megamenu .img_shadow { /* Better style on light background */
 	background:#FFFFFF;
 	padding:4px;
 	border:1px solid #777777;
@@ -208,13 +210,18 @@ body, ul, li {
 	-webkit-box-shadow:0px 0px 5px #666666;
 	box-shadow:0px 0px 5px #666666;
 }
-.img_left { /* Image sticks to the left */
+.megamenu .img_left { /* Image sticks to the left */
 	width:auto;
 	float:left;
 	margin:5px 15px 5px 5px;
 }
+.megamenu .img_right { /* Image sticks to the right */
+	width:auto;
+	float:right;
+	margin:5px 15px 5px 5px;
+}
 
-#menu li .black_box {
+ul.megamenu li .black_box {
 	background-color:#333333;
 	color: #eeeeee;
 	text-shadow: 1px 1px 1px #000;
@@ -231,12 +238,12 @@ body, ul, li {
 	box-shadow:inset 0 0 3px #000000;
 }
 
-#menu li ul {
+ul.megamenu li ul {
 	list-style:none;
 	padding:0;
 	margin:0 0 12px 0;
 }
-#menu li ul li {
+ul.megamenu li ul li {
 	font-size:12px;
 	line-height:24px;
 	position:relative;
@@ -247,14 +254,14 @@ body, ul, li {
 	text-align:left;
 	width:130px;
 }
-#menu li ul li:hover {
+ul.megamenu li ul li:hover {
 	background:none;
 	border:none;
 	padding:0;
 	margin:0;
 }
 
-#menu li .greybox li {
+ul.megamenu li .greybox li {
 	background:#F4F4F4;
 	border:1px solid #bbbbbb;
 	margin:0px 0px 4px 0px;
@@ -267,7 +274,7 @@ body, ul, li {
     -khtml-border-radius: 5px;
     border-radius: 5px;
 }
-#menu li .greybox li:hover {
+ul.megamenu li .greybox li:hover {
 	background:#ffffff;
 	border:1px solid #aaaaaa;
 	padding:4px 6px 4px 6px;
