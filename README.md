@@ -43,7 +43,7 @@ Configuring the menu is a pain. You need to have the correct value in each link'
 Known Bugs
 -----------
 
-There are probably lots of them. Bug/pull requests welcome.
+There are probably lots of them. Bug reports/pull requests welcome.
 
 Requirements
 -----------
