@@ -30,6 +30,9 @@ Configuring the menu is a pain. You need to have the correct value in each link'
 	`blackbox`: display description in blackbox
 	Valid values: `true`
 
+	`link`: Set to `none` to hide menu item link
+	Valid values: `none`
+
 	`description`: Description location
 	Valid values: [before|after] link
 

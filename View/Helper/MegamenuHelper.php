@@ -91,21 +91,29 @@ class MegamenuHelper extends LayoutHelper {
 				} else {
 					$divOptions = array('class' => 'col_1');
 				}
-				if (isset($link['Params']['description']) || !empty($link['Link']['description'])) {
+				if (isset($link['Params']['blackbox'])) {
+					if (isset($link['Params']['link']) && trim($link['Params']['link']) == 'none') {
+						$linkOutput = $this->Html->tag('p', $link['Link']['description'], array('class' => 'black_box'));
+					} else {
+						$linkOutput = $linkOutput .= $this->Html->tag('p', $link['Link']['description'], array('class' => 'black_box'));
+					}
+				} elseif (isset($link['Params']['description']) || !empty($link['Link']['description'])) {
 					if (!empty($link['Params']['description'])) {
 						$position = $link['Params']['description'];
 					} else {
 						$position = 'before';
 					}
+					if (isset($link['Params']['link']) && trim($link['Params']['link']) == 'none') {
+						$position = false;
+					}
 					if ($position == 'before') {
 						$linkOutput = $this->Html->tag('p', $link['Link']['description'] . $linkOutput);
-					}
-					if ($position == 'after') {
+					} elseif ($position == 'after') {
 						$linkOutput = $this->Html->tag('p', $linkOutput . $link['Link']['description']);
+					} else {
+						$linkOutput = $this->Html->tag('p', $link['Link']['description']);
 					}
-				}
-				if (isset($link['Params']['blackbox'])) {
-					$linkOutput = $this->Html->tag('p', $link['Link']['description'], array('class' => 'black_box'));
+
 				}
 				if (isset($link['Params']['imgpath'])) {
 					$imgclass = '';
