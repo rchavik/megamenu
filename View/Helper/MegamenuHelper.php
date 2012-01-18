@@ -117,7 +117,7 @@ class MegamenuHelper extends LayoutHelper {
 					} else {
 						$position = 'before';
 					}
-					if (isset($link['Params']['link']) && trim($link['Params']['link']) == 'none') {
+					if (isset($link['Params']['description']) && trim($link['Params']['description']) == 'none') {
 						$position = false;
 					}
 					if ($position == 'before') {
