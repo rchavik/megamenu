@@ -78,7 +78,11 @@ class MegamenuHelper extends LayoutHelper {
 				}
 			}
 
-			$linkOutput = $this->Html->link($link['Link']['title'], $link['Link']['link'], $linkAttr);
+			if (isset($link['Params']['link']) && $link['Params']['link'] == 'none') {
+				$linkOutput = $link['Link']['title'];
+			} else {
+				$linkOutput = $this->Html->link($link['Link']['title'], $link['Link']['link'], $linkAttr);
+			}
 			if (isset($link['Params']['heading'])) {
 				if (in_array(strtolower(trim($link['Params']['heading'])), array('h2', 'h3', 'h4', 'h5', 'h6'))) {
 					$linkOutput = $this->Html->tag($link['Params']['heading'], $linkOutput);
