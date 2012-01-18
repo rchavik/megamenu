@@ -33,7 +33,7 @@ class MegamenuHelper extends LayoutHelper {
  * @return string
  */
 	public function nestedLinks($links, $options = array(), $depth = 1, $parent = null) {
-		$_options = array();
+		$_options = array('dropClass' => 'drop');
 		$options = array_merge($_options, $options);
 
 		$output = '';
@@ -73,7 +73,9 @@ class MegamenuHelper extends LayoutHelper {
 			}
 
 			if ($depth == 1) {
-				$linkAttr['class'] .= ' drop';
+				if (!empty($link['children'])) {
+					$linkAttr['class'] = trim($linkAttr['class'] . ' ' .$options['dropClass']);
+				}
 			}
 
 			$linkOutput = $this->Html->link($link['Link']['title'], $link['Link']['link'], $linkAttr);
@@ -137,7 +139,8 @@ class MegamenuHelper extends LayoutHelper {
 				}
 				$linkOutput = $this->Html->tag('div', $linkOutput, $divOptions);
 			} else {
-				$linkOutput = $this->Html->tag('li', $linkOutput);
+				$tagAttr = empty($link['children']) ? array() : array('class' => $options['dropClass']);
+				$linkOutput = $this->Html->tag('li', $linkOutput, $tagAttr);
 			}
 			$output .= $linkOutput;
 		}

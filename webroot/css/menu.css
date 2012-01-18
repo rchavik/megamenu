@@ -58,6 +58,14 @@ ul.megamenu li:hover {
 	
 	/* Rounded corners */
 	
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+ul.megamenu li.drop:hover {
+	/* Rounded corners */
+
 	-moz-border-radius: 5px 5px 0px 0px;
 	-webkit-border-radius: 5px 5px 0px 0px;
 	border-radius: 5px 5px 0px 0px;
