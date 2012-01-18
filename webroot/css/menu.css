@@ -72,9 +72,7 @@ ul.megamenu li.drop:hover {
 	background: #F4F4F4;
 	background: -moz-linear-gradient(top, #F4F4F4, #EEEEEE);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F4F4F4), to(#EEEEEE));
-}
 
-ul.megamenu li.drop:hover {
 	/* Rounded corners */
 
 	-moz-border-radius: 5px 5px 0px 0px;
