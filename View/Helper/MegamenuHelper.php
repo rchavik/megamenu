@@ -74,7 +74,8 @@ class MegamenuHelper extends LayoutHelper {
 
 			if ($depth == 1) {
 				if (!empty($link['children'])) {
-					$linkAttr['class'] = trim($linkAttr['class'] . ' ' .$options['dropClass']);
+					$linkClass = empty($linkAttr['class']) ? '' : $linkAttr['class'];
+					$linkAttr['class'] = trim($linkClass . ' ' .$options['dropClass']);
 				}
 			}
 
