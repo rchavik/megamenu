@@ -9,30 +9,30 @@ body, ul, li {
 
 ul.megamenu {
 	list-style:none;
-	width:940px;
-	margin:30px auto;
-	height:43px;
+	width:100%;
+	height:40px;
 	padding:0px 20px 0px 20px;
-
+	margin: 0;
 	/* Rounded Corners */
-	
+
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 
 	/* Background color and gradients */
-	
+
 	background: #014464;
 	background: -moz-linear-gradient(top, #0272a7, #013953);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0272a7), to(#013953));
-	
+
 	/* Borders */
-	
+
 	border: 1px solid #002232;
 
 	-moz-box-shadow:inset 0px 0px 1px #edf9ff;
 	-webkit-box-shadow:inset 0px 0px 1px #edf9ff;
 	box-shadow:inset 0px 0px 1px #edf9ff;
+
 }
 
 ul.megamenu li {
@@ -44,26 +44,35 @@ ul.megamenu li {
 	margin-right:30px;
 	margin-top:7px;
 	border:none;
+	z-index:999;
 }
 
 ul.megamenu li:hover {
 	border: 1px solid #777777;
 	padding: 4px 9px 4px 9px;
-	
+
 	/* Background color and gradients */
-	
+
 	background: #F4F4F4;
 	background: -moz-linear-gradient(top, #F4F4F4, #EEEEEE);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F4F4F4), to(#EEEEEE));
-	
+
 	/* Rounded corners */
-	
-	-moz-border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
-	border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 ul.megamenu li.drop:hover {
+	border: 1px solid #777777;
+	padding: 4px 9px 4px 9px;
+
+	/* Background color and gradients */
+
+	background: #F4F4F4;
+	background: -moz-linear-gradient(top, #F4F4F4, #EEEEEE);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F4F4F4), to(#EEEEEE));
+
 	/* Rounded corners */
 
 	-moz-border-radius: 5px 5px 0px 0px;
@@ -79,6 +88,10 @@ ul.megamenu li a {
 	outline:0;
 	text-decoration:none;
 	text-shadow: 1px 1px 1px #000;
+}
+
+ul.megamenu .drop div a {
+	font-size: 12px;
 }
 
 ul.megamenu li:hover a {
@@ -106,7 +119,7 @@ ul.megamenu li:hover .drop {
 	padding:10px 5px 10px 5px;
 	border:1px solid #777777;
 	border-top:none;
-	
+
 	/* Gradient background */
 	background:#F4F4F4;
 	background: -moz-linear-gradient(top, #EEEEEE, #BBBBBB);
@@ -150,6 +163,22 @@ ul.megamenu li:hover .dropdown_5columns {
 .col_4 {width:550px;}
 .col_5 {width:690px;}
 
+
+/* set full width */
+
+.full_2columns { width: 300px; }
+.full_3columns { width: 430px; }
+.full_4columns { width: 580px; }
+.full_5columns { width: 720px; }
+
+.full_2columns .col_1,
+.full_3columns .col_1,
+.full_4columns .col_1,
+.full_5columns .col_1 {
+	margin-left: 0;
+	margin-right: 10px;
+}
+
 ul.megamenu .menu_right {
 	float:right;
 	margin-right:0px;
@@ -157,8 +186,8 @@ ul.megamenu .menu_right {
 ul.megamenu li .align_right {
 	/* Rounded Corners */
 	-moz-border-radius: 5px 0px 5px 5px;
-    -webkit-border-radius: 5px 0px 5px 5px;
-    border-radius: 5px 0px 5px 5px;
+	-webkit-border-radius: 5px 0px 5px 5px;
+	border-radius: 5px 0px 5px 5px;
 }
 
 ul.megamenu li:hover .align_right {
@@ -167,13 +196,16 @@ ul.megamenu li:hover .align_right {
 	top:auto;
 }
 
-ul.megamenu p, ul.megamenu h2, ul.megamenu h3, ul.megamenu ul li {
+ul.megamenu p, ul.megamenu h2, ul.megamenu h3, ul.megamenu h4, ul.megamenu ul li {
 	font-family:Arial, Helvetica, sans-serif;
-	line-height:21px;
-	font-size:12px;
 	text-align:left;
 	text-shadow: 1px 1px 1px #FFFFFF;
 }
+
+ul.megamenu h2, ul.megamenu h3, ul.megamenu h4 {
+	font-weight: bold;
+}
+
 ul.megamenu h2 {
 	font-size:21px;
 	font-weight:400;
@@ -182,10 +214,16 @@ ul.megamenu h2 {
 	padding-bottom:14px;
 	border-bottom:1px solid #666666;
 }
+
 ul.megamenu h3 {
-	font-size:14px;
-	margin:7px 0 14px 0;
-	padding-bottom:7px;
+	font-size:16px;
+	margin:0;
+	border-bottom:1px solid #888888;
+}
+
+ul.megamenu h4 {
+	font-size:12px;
+	margin:0;
 	border-bottom:1px solid #888888;
 }
 ul.megamenu p {
@@ -194,7 +232,7 @@ ul.megamenu p {
 }
 
 ul.megamenu li:hover div a {
-	font-size:12px;
+	
 	color:#015b86;
 }
 ul.megamenu li:hover div a:hover {
@@ -237,8 +275,8 @@ ul.megamenu li .black_box {
 
 	/* Rounded Corners */
 	-moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 
 	/* Shadow */
 	-webkit-box-shadow:inset 0 0 3px #000000;
@@ -278,9 +316,9 @@ ul.megamenu li .greybox li {
 
 	/* Rounded Corners */
 	-moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
 }
 ul.megamenu li .greybox li:hover {
 	background:#ffffff;
