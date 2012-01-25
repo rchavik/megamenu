@@ -44,6 +44,7 @@ ul.megamenu li {
 	margin-right:30px;
 	margin-top:7px;
 	border:none;
+	z-index:999;
 }
 
 ul.megamenu li:hover {
@@ -57,10 +58,10 @@ ul.megamenu li:hover {
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F4F4F4), to(#EEEEEE));
 	
 	/* Rounded corners */
-	
-	-moz-border-radius: 5px 5px 5px 5px;
-	-webkit-border-radius: 5px 5px 5px 5px;
-	border-radius: 5px 5px 5px 5px;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 ul.megamenu li.drop:hover {
@@ -157,8 +158,8 @@ ul.megamenu .menu_right {
 ul.megamenu li .align_right {
 	/* Rounded Corners */
 	-moz-border-radius: 5px 0px 5px 5px;
-    -webkit-border-radius: 5px 0px 5px 5px;
-    border-radius: 5px 0px 5px 5px;
+	-webkit-border-radius: 5px 0px 5px 5px;
+	border-radius: 5px 0px 5px 5px;
 }
 
 ul.megamenu li:hover .align_right {
@@ -237,8 +238,8 @@ ul.megamenu li .black_box {
 
 	/* Rounded Corners */
 	-moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 
 	/* Shadow */
 	-webkit-box-shadow:inset 0 0 3px #000000;
@@ -278,9 +279,9 @@ ul.megamenu li .greybox li {
 
 	/* Rounded Corners */
 	-moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
 }
 ul.megamenu li .greybox li:hover {
 	background:#ffffff;
