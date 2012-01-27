@@ -289,3 +289,8 @@ ul.megamenu li .greybox li:hover {
 	padding:4px 6px 4px 6px;
 	margin:0px 0px 4px 0px;
 }
+
+/* nested columns */
+.col_3 .col_3 { margin: 0 }
+.col_3 .col_1.alpha { margin-left: 0; }
+.col_3 .col_1.omega { margin-right: 0; }
