@@ -125,6 +125,11 @@ ul.megamenu li:hover .drop {
 .dropdown_4columns {width: 560px;}
 .dropdown_5columns {width: 700px;}
 
+ul.megamenu li.hover .dropdown_1column,
+ul.megamenu li.hover .dropdown_2columns,
+ul.megamenu li.hover .dropdown_3columns,
+ul.megamenu li.hover .dropdown_4columns,
+ul.megamenu li.hover .dropdown_5columns,
 ul.megamenu li:hover .dropdown_1column,
 ul.megamenu li:hover .dropdown_2columns,
 ul.megamenu li:hover .dropdown_3columns,
