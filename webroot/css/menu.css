@@ -291,6 +291,17 @@ ul.megamenu li .greybox li:hover {
 }
 
 /* nested columns */
-.col_3 .col_3 { margin: 0 }
-.col_3 .col_1.alpha { margin-left: 0; }
-.col_3 .col_1.omega { margin-right: 0; }
+.col_2 .col_2,
+.col_3 .col_3,
+.col_4 .col_4,
+.col_5 .col_5 { margin: 0 }
+.col_1.alpha,
+.col_2.alpha,
+.col_3.alpha,
+.col_4.alpha,
+.col_5.alpha { margin-left: 0; }
+.col_1.omega,
+.col_2.omega,
+.col_3.omega,
+.col_4.omega,
+.col_5.omega { margin-right: 0; }
