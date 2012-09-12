@@ -1,9 +1,11 @@
 <?php
 
-class MegamenuHelper extends LayoutHelper {
+App::uses('MenusHelper', 'Menus.View/Helper');
 
-	public function __construct(View $view) {
-		parent::__construct($view);
+class MegamenuHelper extends MenusHelper {
+
+	public function __construct(View $view, $settings = array()) {
+		parent::__construct($view, $settings);
 		if (!isset($this->params['admin']) && !$this->request->is('ajax')) {
 			$this->Html->css('/megamenu/css/menu', array(), array('inline' => false));
 		}
@@ -83,6 +85,7 @@ class MegamenuHelper extends LayoutHelper {
 			if (isset($link['Params']['link']) && $link['Params']['link'] == 'none') {
 				$linkOutput = $link['Link']['title'];
 			} else {
+				Croogo::dispatchEvent('Helper.Menus.beforeLink', $this->_View, array('link' => &$link));
 				$linkOutput = $this->Html->link($link['Link']['title'], $link['Link']['link'], $linkAttr);
 			}
 			if (isset($link['Params']['heading'])) {
