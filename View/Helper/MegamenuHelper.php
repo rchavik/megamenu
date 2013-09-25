@@ -7,7 +7,7 @@ class MegamenuHelper extends MenusHelper {
 	public function __construct(View $view, $settings = array()) {
 		parent::__construct($view, $settings);
 		if (!isset($this->params['admin']) && !$this->request->is('ajax')) {
-			$this->Html->css('/megamenu/css/menu', array(), array('inline' => false));
+			$this->Html->css('/megamenu/css/menu', array('inline' => false));
 		}
 	}
 
